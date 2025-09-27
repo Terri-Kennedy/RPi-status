@@ -2,6 +2,7 @@
 Raspberry Pi version / power / cooling status report script
 
 This is an enhanced version of the vcgencmd_power_report.sh script, forked from Paraphraser's original script at:
+
 https://gist.github.com/Paraphraser/17fb6320d0e896c6446fb886e1207c7e
 
 I encourage you to read that article as it contains a great deal of additional useful info which I'm not repeating here.
@@ -15,7 +16,8 @@ It has not been tested on other Raspberry Pi models, and feedback is welcome - j
 
 # Sample output
 The following is a representative sample of the display produced by this script:
-```Raspberry Pi 5 Model B Rev 1.1
+```
+Raspberry Pi 5 Model B Rev 1.1
 Linux version 6.12.34+rpt-rpi-2712 (2025-06-26)
 vcgencmd get_throttled (0x0)
 vcgencmd measure_volts:
@@ -27,15 +29,17 @@ Temperature: 48.8'C
   Fan Speed: 0 RPM
 Current CPU clock: 1.5 GHz
 Minimum CPU clock: 1.5 GHz
-Maximum CPU clock: 2.4 GHz```
-
+Maximum CPU clock: 2.4 GHz
+```
 # Installation
 Just download the status.sh script and use 'chmod 555 status.sh' to mark it as executable. Optionally, use 'cp -p status.sh /usr/local/bin/status' to make it available by simply typing 'status'.
 
 # Note
 My impetus for creating this script was using a single large power supply to run eight Raspberry Pi 5 boards, each with an NVM HAT+ and 256GB.2 SSDs. I wanted to make sure the Pis were not throttling. Since the Pi 5 uses USB-C PD to detect the capacity of the attached power supply, I had to override this auto-detection by adding "PSU_MAX_CURRENT=5000" to the EEPROM config. The official socumentation for that setting can be found at:
+
 https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#PSU_MAX_CURRENT
 
 # Credit
 Based on an original script from: 
+
 https://github.com/Paraphraser
