@@ -17,17 +17,17 @@ It has not been tested on other Raspberry Pi models, and feedback is welcome - j
 # Sample output
 The following is a representative sample of the display produced by this script:
 ```
-Raspberry Pi 5 Model B Rev 1.1
-Linux version 6.12.34+rpt-rpi-2712 (2025-06-26)
+Raspberry Pi 5 Model B Rev 1.0
+Linux version 6.12.47+rpt-rpi-2712 (2025-09-16)
 vcgencmd get_throttled (0x0)
 vcgencmd measure_volts:
-     core volt=0.7200V
+     core volt=0.9026V
   sdram_c volt=0.6000V
   sdram_i volt=0.6000V
   sdram_p volt=1.1000V
-Temperature: 48.8'C
-  Fan Speed: 0 RPM
-Current CPU clock: 1.5 GHz
+Temperature: 49.4'C
+  Fan Speed: 3038 RPM
+Current CPU clock: 2.4 GHz
 Minimum CPU clock: 1.5 GHz
 Maximum CPU clock: 2.4 GHz
 ```
