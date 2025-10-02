@@ -32,8 +32,12 @@ for S in core sdram_c sdram_i sdram_p ; do printf '%9s %s\n' "$S" "$(vcgencmd me
 
 echo "Temperature: $(vcgencmd measure_temp | tr -d "temp=")"
 
-# display fan speed
-echo "  Fan Speed: $(cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input) RPM"
+# display fan speed (if present and monitored)
+if test -f /sys/devices/platform/cooling_fan/hwmon/*/fan1_input; then
+  echo "  Fan Speed: $(cat /sys/devices/platform/cooling_fan/hwmon/*/fan1_input) RPM"
+else
+  echo "  Fan not present or without speed monitoring capability"
+fi
 
 # display current / minimum / maximum CPU speeds
 cur_val=`cat /sys/devices/system/cpu/cpufreq/policy0/scaling_cur_freq`
